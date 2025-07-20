@@ -8,7 +8,7 @@ elif b>=a and b>=c:
     print("b is greater no.")
 elif c>=a and c>=b:
     print("c is greater no.")
-elif a==b or b==c or c==a:
+elif :
     print("both are same ")
 else:
     print("invalid no.")
