@@ -1,6 +1,14 @@
 # Case Study 1
-a=["sugar","dal","rice","maggie"]
-#a.append("wheat")
-#print(a)
-a.remove("dal")
-print(a)
+
+basket=[]
+basket.append("apple")
+basket.append("cherry")
+basket.append("grapes")
+basket.append("orange")
+print(basket)
+basket.remove("orange")
+print(basket)
+
+
+
+
