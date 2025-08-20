@@ -39,7 +39,7 @@ while True:
                 a=int(input("\n Enter your choice"))
                 if a==1:
                     # Add Question
-                    n=int(input("How many questions do you want to enter: "))
+                    n=int(input("Enter the question requirement:"))
                     add_quest=[]
                     for i in range(n):
                         print("You can Add the Question")
@@ -50,11 +50,23 @@ while True:
                         opt_C=input("C:")
                         opt_D=input("D:")
                         ans=input("answer")
-                        add_quest.append([ques ,"\n A."+n opt_A, opt_B, opt_C, opt_D,ans])
-                        print(add_quest)
+                        for correct in ("A", "B", "C", "D"):
+                                new_q = {
+                                    "question": Que,
+                                    "options": ("A."+ opt_a, "B." +opt_b, "C." +opt_c, "D." +opt_d),
+                                    "answer": correct
+                                }
+                                question.append(new_q)
+                                print("Question added successfully.")
+                                print(question)
+                         
                         print("_"*70)
                 elif a==2:
                     # Update Question
+                    print(add_quest)
+                    for i in range(len(add_quest)):
+                        value=input("Enter the value")
+                        add_quest[i]=value
                     print(add_quest)
                     print("_"*70)   
                             
