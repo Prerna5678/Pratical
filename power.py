@@ -3,4 +3,4 @@ def power(x, y):
         return 1 
     else:
         return x * power(x, y - 1)
-print(power(2, 3)) 
+print(power(2, 5)) 
