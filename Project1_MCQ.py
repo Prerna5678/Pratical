@@ -1,3 +1,4 @@
+# MCQ question and answer
 teacher=[]
 student=[]
 add_quest=[]
@@ -29,7 +30,7 @@ while True:
                     flag=True
                 else:
                     print("Please try again",Teach_login)
-                    flag=Flase
+                    flag=True 
             print(teacher)
             add_quest=[]
             print("_"*70)
