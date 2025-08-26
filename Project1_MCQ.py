@@ -89,7 +89,7 @@ while True:
                 elif a==0:
                     # Exit
                     print("Exit")
-                    break;
+                    break
                     print("_"*70)
                 else:
                     print("Enter proper Number")
