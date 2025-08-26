@@ -27,27 +27,19 @@ while True:
                 while True:
                     print("\n 1.Jeans \n 2.Shirt \n 3.T-Shirt \n 4.Jacket \n 5.Checkout \n 6.View Cart \n 0.Exit")
                     prod_choice = int(input("\nEnter your choice: "))
-                    # Jeans
+                    # Product 
                     if choice==1:
-                        Qty=int(input("Enter the qty"))
-                        Price=[0]
-                        total=Price*Qty
-                        print(total)
-                        print("+"*70)
-                    # Shirt
-                    elif choice==2:
-                        Qty=int(input("Enter the qty"))
-                        print()
-                        print("+"*70)
-                    # T-Shirt
-                    elif choice==3:
-                        Qty=int(input("Enter the qty"))
-                        print()
-                        print("+"*70)
-                    # Jacket
-                    elif choice==4:
-                        Qty=int(input("Enter the qty"))
-                        print()
+                        for item in Product:
+                            name = item[0]
+                            price = item[1]
+                            # Qty user side input
+                            qty = int(input(f"Enter quantity for {name} (₹{price} each): "))
+                            # Calculation method of product * qty
+                            subtotal = price * qty
+                            total_amt += subtotal
+                        print(f"{name} x {qty} = ₹{subtotal}\n")
+                        print(f"Total Amount: ₹{total_amt}")
+                        print("Thank you for shopping!")
                         print("+"*70)
                     # Checkout
                     elif choice==5:
