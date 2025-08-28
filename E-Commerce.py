@@ -29,6 +29,7 @@ while True:
                     prod_choice = int(input("\nEnter your choice: "))
                     # Product 
                     if choice==1:
+                        total_amt=0
                         for item in Product:
                             name = item[0]
                             price = item[1]
@@ -37,8 +38,8 @@ while True:
                             # Calculation method of product * qty
                             subtotal = price * qty
                             total_amt += subtotal
-                        print(f"{name} x {qty} = ₹{subtotal}\n")
-                        print(f"Total Amount: ₹{total_amt}")
+                        print(name," x ",qty ,"= Rs.",subtotal,"\n")
+                        print("Total Amount: Rs.",total_amt)
                         print("Thank you for shopping!")
                         print("+"*70)
                     # Checkout
