@@ -1,8 +1,9 @@
 # E - Commerce
 Customer = []
-Product = [("Jeans", 799), ("Shirt", 500), ("T-Shirt", 3500), ("Jacket", 7999)]
+#Product = {1:{"name":"Jeans","price": 799}, 2:{"name":"Shirt", "price":500},3: {"name":"T-Shirt", "price":3500}, 4:{"name":"Jacket","price": 7999}}
 cart = []
-
+Product = [{"name":"Jeans","price": 799}, {"name":"Shirt", "price":500}, {"name":"T-Shirt", "price":3500}, {"name":"Jacket","price": 7999}]
+shopping_list=[]
 print("+" * 70)
 
 while True:
@@ -27,28 +28,61 @@ while True:
                 while True:
                     print("\n 1.Jeans \n 2.Shirt \n 3.T-Shirt \n 4.Jacket \n 5.Checkout \n 6.View Cart \n 0.Exit")
                     prod_choice = int(input("\nEnter your choice: "))
-                    # Product 
-                    if choice==1:
-                        total_amt=0
-                        for item in Product:
-                            name = item[0]
-                            price = item[1]
-                            # Qty user side input
-                            qty = int(input(f"Enter quantity for {name} (₹{price} each): "))
-                            # Calculation method of product * qty
-                            subtotal = price * qty
-                            total_amt += subtotal
+                    name=0
+                    price=0
+                    total_amt=0
+                    # Jeans
+                    if prod_choice==1:
+                         # Qty user side input
+                        qty = int(input(f"Enter quantity for {name}:"))
+
+                        # Calculation method of product * qty
+                        subtotal = Product[0]["price"]* qty
+                        total_amt += subtotal
+                        
                         print(name," x ",qty ,"= Rs.",subtotal,"\n")
                         print("Total Amount: Rs.",total_amt)
                         print("Thank you for shopping!")
+                        
                         print("+"*70)
+                    # Shirt
+                    elif prod_choice==2:
+                        # Qty user side input
+                        qty = int(input(f"Enter quantity for {name}:"))
+                                                # Calculation method of product * qty
+                        subtotal = price * qty
+                        total_amt += subtotal
+                    # T-Shirt
+                    elif prod_choice==3:
+                        # Qty user side input
+                        qty = int(input(f"Enter quantity for {name}:"))
+                        # Calculation method of product * qty
+                        subtotal = price * qty
+                        total_amt += subtotal
+                    # Jacket
+                    elif prod_choice==4:
+                        # Qty user side input
+                        qty = int(input(f"Enter quantity for {name}:"))
+                        # Calculation method of product * qty
+                        subtotal = price * qty
+                        total_amt += subtotal            
                     # Checkout
-                    elif choice==5:
-                        print()
+                    elif prod_choice==5:
+                        choice=int(input("you want to continue shopping()"))
+                        choice1=int(input("Payment Option"))
+                        if choice==yes:
+                            print("Continue to shopping")
+                        else("Thank for shopping")
                         print("+"*70)
                     # Cart
-                    elif choice==6:
-                        print()
+                    elif prod_choice==6:
+                        # Calculation method of product * qty
+                        subtotal = Product[0]["price"]* qty
+                        total_amt += subtotal
+                        
+                        print(name," x ",qty ,"= Rs.",subtotal,"\n")
+                        print("Total Amount: Rs.",total_amt)
+                        print("Thank you for shopping!")
                         print("+"*70)
                     # Exit
                     elif choice==0:
@@ -73,13 +107,14 @@ while True:
         print(Customer)
         new_user = {'username': reg_username, 'email': reg_email}
 
-        ''' if new_user in Customer:
+        if new_user in Customer:
             print("User already registered.")
         else:
             Customer.append(new_user)
             print("Your registration was successful.")
         print(Customer)
-        print("+" * 70)'''
+        print("+" * 70)
+
         if new_user not in Customer:
 
             Customer.append(new_user)
