@@ -1,6 +1,5 @@
 # E - Commerce
 Customer = []
-#Product = {1:{"name":"Jeans","price": 799}, 2:{"name":"Shirt", "price":500},3: {"name":"T-Shirt", "price":3500}, 4:{"name":"Jacket","price": 7999}}
 cart = []
 Product = [{"name":"Jeans","price": 799}, {"name":"Shirt", "price":500}, {"name":"T-Shirt", "price":3500}, {"name":"Jacket","price": 7999}]
 shopping_list=[]
@@ -49,7 +48,7 @@ while True:
                     elif prod_choice==2:
                         # Qty user side input
                         qty = int(input(f"Enter quantity for {name}:"))
-                                                # Calculation method of product * qty
+                        # Calclation method of product * qty
                         subtotal = price * qty
                         total_amt += subtotal
                     # T-Shirt
@@ -72,8 +71,8 @@ while True:
                         choice1=int(input("Payment Option"))
                         if choice==yes:
                             print("Continue to shopping")
-                        else("Thank for shopping")
-                        print("+"*70)
+                        else:
+                            print("+"*70)
                     # Cart
                     elif prod_choice==6:
                         # Calculation method of product * qty
