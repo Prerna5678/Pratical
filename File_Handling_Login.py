@@ -13,4 +13,3 @@ if Cust_login == new_user:
 else:
     print("invalid login! pls do first registration")
   
-print(globals(File_Handling_Login.py))
