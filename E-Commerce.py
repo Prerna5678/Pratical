@@ -12,6 +12,8 @@ while True:
     choice = int(input("\nEnter your choice: "))
     print("+" * 70)
 
+
+    
     if choice == 1:
         # Login form for Customer
         username = input("Enter your name: ")
@@ -27,8 +29,6 @@ while True:
                 while True:
                     print("\n 1.Jeans \n 2.Shirt \n 3.T-Shirt \n 4.Jacket \n 5.Checkout \n 6.View Cart \n 0.Exit")
                     prod_choice = int(input("\nEnter your choice: "))
-                    name=0
-                    price=0
                     total_amt=0
                     # Jeans
                     if prod_choice==1:
@@ -49,31 +49,40 @@ while True:
                         # Qty user side input
                         qty = int(input(f"Enter quantity for {name}:"))
                         # Calclation method of product * qty
-                        subtotal = price * qty
+                        subtotal = Product[1]["price"]* qty
                         total_amt += subtotal
+                        print(name," x ",qty ,"= Rs.",subtotal,"\n")
+                        print("Total Amount: Rs.",total_amt)
+                        print("Thank you for shopping!")
                     # T-Shirt
                     elif prod_choice==3:
                         # Qty user side input
                         qty = int(input(f"Enter quantity for {name}:"))
                         # Calculation method of product * qty
-                        subtotal = price * qty
+                        subtotal = Product[2]["price"]* qty
                         total_amt += subtotal
+                        print(name," x ",qty ,"= Rs.",subtotal,"\n")
+                        print("Total Amount: Rs.",total_amt)
+                        print("Thank you for shopping!")
                     # Jacket
                     elif prod_choice==4:
                         # Qty user side input
                         qty = int(input(f"Enter quantity for {name}:"))
                         # Calculation method of product * qty
-                        subtotal = price * qty
-                        total_amt += subtotal            
+                        subtotal = Product[3]["price"]* qty
+                        total_amt += subtotal   
+                        print(name," x ",qty ,"= Rs.",subtotal,"\n")
+                        print("Total Amount: Rs.",total_amt)
+                        print("Thank you for shopping!")         
                     # Checkout
                     elif prod_choice==5:
                         if not cart:
                             print("cart is empty")
-                            break
+
                         total_amt=0
-                        for id,qty in cart.items():
-                            item_name=Product[id]['name']
-                            item_price=Product[id]['price']*qty
+                        for qty in cart.items():
+                            item_name=Product['name']
+                            item_price=Product['price']*qty
                             total += item_price
                             print(item_name,"x",qty,"Rs",item_price)
                         print("your total amount is",total)
@@ -97,8 +106,8 @@ while True:
                     # Exit
                     elif choice==0:
                         print("Exit")
-                        break
                         print("+"*70)
+                        break
                     else:
                         print("Enter proper Number")
                         print("+"*70)

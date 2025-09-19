@@ -1,8 +1,8 @@
-# E - Commerce
+# Product
 Customer = []
-Product = [("Jeans", 799), ("Shirt", 500), ("T-Shirt", 3500), ("Jacket", 7999)]
 cart = []
-
+Product = [{"name":"Jeans","price": 799}, {"name":"Shirt", "price":500}, {"name":"T-Shirt", "price":3500}, {"name":"Jacket","price": 7999}]
+shopping_list=[]
 print("+" * 70)
 
 while True:
@@ -12,6 +12,8 @@ while True:
     choice = int(input("\nEnter your choice: "))
     print("+" * 70)
 
+
+    
     if choice == 1:
         # Login form for Customer
         username = input("Enter your name: ")
@@ -21,62 +23,107 @@ while True:
 
         for Cust in Customer:
             if Cust_login == Cust:
+                print(Cust)
                 print("You login successfully", Cust_login)
                 flag = True
-                break
+                while True:
+                    print("\n 1.Jeans \n 2.Shirt \n 3.T-Shirt \n 4.Jacket \n 5.Checkout \n 6.View Cart \n 0.Exit")
+                    prod_choice = int(input("\nEnter your choice: "))
+                    total_amt=0
+                    # Jeans
+                    if prod_choice==1:
+                         # Qty user side input
+                        qty = int(input(f"Enter quantity for {name}:"))
 
-        if not flag:
-            print("Please try again. Invalid credentials.", Cust_login)
-            print("+" * 70)
-            continue
+                        # Calculation method of product * qty
+                        subtotal = Product[0]["price"]* qty
+                        total_amt += subtotal
+                        
+                        print(name," x ",qty ,"= Rs.",subtotal,"\n")
+                        print("Total Amount: Rs.",total_amt)
+                        print("Thank you for shopping!")
+                        
+                        print("+"*70)
+                    # Shirt
+                    elif prod_choice==2:
+                        # Qty user side input
+                        qty = int(input(f"Enter quantity for {name}:"))
+                        # Calclation method of product * qty
+                        subtotal = Product[1]["price"]* qty
+                        total_amt += subtotal
+                        print(name," x ",qty ,"= Rs.",subtotal,"\n")
+                        print("Total Amount: Rs.",total_amt)
+                        print("Thank you for shopping!")
+                    # T-Shirt
+                    elif prod_choice==3:
+                        # Qty user side input
+                        qty = int(input(f"Enter quantity for {name}:"))
+                        # Calculation method of product * qty
+                        subtotal = Product[2]["price"]* qty
+                        total_amt += subtotal
+                        print(name," x ",qty ,"= Rs.",subtotal,"\n")
+                        print("Total Amount: Rs.",total_amt)
+                        print("Thank you for shopping!")
+                    # Jacket
+                    elif prod_choice==4:
+                        # Qty user side input
+                        qty = int(input(f"Enter quantity for {name}:"))
+                        # Calculation method of product * qty
+                        subtotal = Product[3]["price"]* qty
+                        total_amt += subtotal   
+                        print(name," x ",qty ,"= Rs.",subtotal,"\n")
+                        print("Total Amount: Rs.",total_amt)
+                        print("Thank you for shopping!")         
+                    # Checkout
+                    elif prod_choice==5:
+                        if not cart:
+                            print("cart is empty")
 
-        # Show Product menu after successful login
-        while True:
-            print("\n 1.Jeans \n 2.Shirt \n 3.T-Shirt \n 4.Jacket \n 5.Checkout \n 6.View Cart \n 0.Exit")
-            prod_choice = int(input("\nEnter your choice: "))
-        # Jeans
-        if choice==1:
-            Qty=int(input("Enter the qty"))
-            print(Product[0])
-            print("+"*70)
-            # Shirt
-        elif choice==2:
-            Qty=int(input("Enter the qty"))
-            print(Product[1])
-            print("+"*70)
-        # T-Shirt
-        elif choice==3:
-            Qty=int(input("Enter the qty"))
-            print(Product[2])
-            print("+"*70)
-        # Jacket
-        elif choice==4:
-            Qty=int(input("Enter the qty"))
-            print(Product[3])
-            print("+"*70)
-        # Checkout
-        elif choice==5:
-            print()
-            print("+"*70)
-        # Cart
-        elif choice==6:
-            print()
-            print("+"*70)
-        # Exit
-        elif choice==0:
-            print("Exit")
-            break
-            print("+"*70)
+                        total_amt=0
+                        for qty in cart.items():
+                            item_name=Product['name']
+                            item_price=Product['price']*qty
+                            total += item_price
+                            print(item_name,"x",qty,"Rs",item_price)
+                        print("your total amount is",total)
+                        confirm=input("You amount is(yes/no):")
+                        if confirm =="yes":
+                            print("Thank you for shopping")
+                            cart.clear()
+                        else:
+                            print("Continue shopping")
+                            print("+"*70)
+                    # Cart
+                    elif prod_choice==6:
+                        # Calculation method of product * qty
+                        subtotal = Product[0]["price"]* qty
+                        total_amt += subtotal
+                        
+                        print(name," x ",qty ,"= Rs.",subtotal,"\n")
+                        print("Total Amount: Rs.",total_amt)
+                        print("Thank you for shopping!")
+                        print("+"*70)
+                    # Exit
+                    elif choice==0:
+                        print("Exit")
+                        print("+"*70)
+                        break
+                    else:
+                        print("Enter proper Number")
+                        print("+"*70)
+
         else:
-            print("Enter proper Number")
-            print("+"*70)
-            1
+            print("Please try again. Invalid credentials.", Cust_login)
+            print(Customer)
+            print("+" * 70)
+        # Show Product menu after successful login
     elif choice == 2:
         # Registration Form
         print("\nRegistration Form")
         print("+" * 70)
         reg_username = input("Enter your name: ")
         reg_email = input("Enter your email: ")
+        print(Customer)
         new_user = {'username': reg_username, 'email': reg_email}
 
         if new_user in Customer:
@@ -86,6 +133,12 @@ while True:
             print("Your registration was successful.")
         print(Customer)
         print("+" * 70)
+
+        if new_user not in Customer:
+
+            Customer.append(new_user)
+        else:
+            print("user already registered")
 
     elif choice == 0:
         print("Exit")

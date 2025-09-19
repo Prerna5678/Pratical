@@ -1,0 +1,6 @@
+- Write a program to copy the elements of one array into another array.
+- Write a program to find the maximum value in an array.
+- Write a program to calculate the sum of all elements in an array.
+- Write a program to add two arrays element-wise and store the result in a third array.
+- Write a program to merge two arrays into a third array.
+- Write a program to print the elements of an array in reverse order.
