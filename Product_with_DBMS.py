@@ -33,7 +33,7 @@ while True:
                     # Jeans
                     if prod_choice==1:
                          # Qty user side input
-                        qty = int(input(f"Enter quantity for {name}:"))
+                        qty = int(input(f"Enter quantity for {Product['name']}:"))
 
                         # Calculation method of product * qty
                         subtotal = Product[0]["price"]* qty

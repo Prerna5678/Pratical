@@ -1,8 +1,8 @@
-import threading
+# import threading
 
-t = threading.Thread()
-print(help(t))
+# t = threading.Thread()
+# print(help(t))
 
-#from threading import Thread
+from threading import Thread
 
-#t = Thread()
+t = Thread()
