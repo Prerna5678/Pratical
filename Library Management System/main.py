@@ -1,10 +1,21 @@
-import pymysql
+from users import staff_login
 
-connection = pymysql.connect(
-    host="localhost",
-    user="root",
-    password="username@2811",      
-    database="Library"
-)
+while True:
+    try:
+        print("""
+        LIBRARY MANAGEMENT SYSTEM
+        1. Staff Login
+        2. Exit
+        """)
 
-connection.close()
+        choice = int(input("Enter choice: "))
+
+        if choice == 1:
+            staff_login()
+        elif choice == 2:
+            break
+        else:
+            print("Invalid choice")
+
+    except ValueError:
+        print("Please enter numbers only")
