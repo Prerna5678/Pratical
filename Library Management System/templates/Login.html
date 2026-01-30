@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+ <!--Nav logo-->
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{{ url_for('static', filename='logo.jpg') }}" 
+           alt="Logo" width="55" height="50" class="d-inline-block align-text-top">
+      Library
+    </a>
+  </div>
+  
+</nav>
+
+
+<div class="container">
+
+    <!-- Radio buttons -->
+    <input type="radio" name="tab" id="signin" checked>
+    <input type="radio" name="tab" id="signup">
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <label for="signin">Sign In</label>
+        <label for="signup">Sign Up</label>
+    </div>
+
+    <!-- Sign In Form -->
+    <div class="form signin-form">
+        <h3>Sign In</h3>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div class="form signup-form">
+        <h3>Sign Up</h3>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

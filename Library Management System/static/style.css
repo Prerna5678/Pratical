@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: orange;
+}
+
+.navbar-brand {
+    display: flex;           
+    align-items: center;     
+    gap: 10px;               
+    color: black;           
+    text-decoration: none;   
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.container {
+    width: 380px;
+    margin: 80px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+/* Hide radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.tabs label {
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+    padding-bottom: 6px;
+}
+
+/* Active tab underline */
+#signin:checked ~ .tabs label[for="signin"],
+#signup:checked ~ .tabs label[for="signup"] {
+    border-bottom: 3px solid darkorange;
+}
+
+/* Forms */
+.form {
+    display: none;
+}
+
+#signin:checked ~ .signin-form {
+    display: block;
+}
+
+#signup:checked ~ .signup-form {
+    display: block;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FF8C00;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+
+h3::after {
+    content: '';
+    display: block;
+    width: 60px;               /* underline length */
+    height: 3px;               /* underline thickness */
+    background-color: #FF8C00; /* dark-orange underline */
+    margin: 6px auto 0 auto;   /* center below heading */
+    border-radius: 2px;        /* rounded edges */
+}
+
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: darkorange;
+}
+
+button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px;
+    background-color: darkorange;
+    border: none;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff8c00;
+}
