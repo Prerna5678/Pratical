@@ -1,37 +1,96 @@
+
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+/* BODY */
 body {
     font-family: Arial, sans-serif;
     background-color: orange;
 }
 
-.navbar-brand {
-    display: flex;           
-    align-items: center;     
-    gap: 10px;               
-    color: black;           
-    text-decoration: none;   
-    font-weight: bold;
-    font-size: 22px;
+/* NAVBAR */
+.navbar {
+    background-color: white !important;
 }
 
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: darkorange !important;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: darkorange !important;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+.nav-link:hover {
+    color: #ff8c00 !important;
+}
+
+/* ===== LOGIN PAGE FORM ===== */
 .container {
-    width: 380px;
-    margin: 80px auto;
     background: white;
     padding: 30px;
+    max-width: 500px;   /* limit width to normal size */
+    margin: 60px auto;  /* center horizontally and give top spacing */
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* Hide radio buttons */
+/* LOGIN FORM HEADINGS */
+h3 {
+    text-align: center;
+    color: darkorange;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+input:focus {
+    outline: none;
+    border-color: darkorange;
+}
+
+/* BUTTONS */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: darkorange;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff8c00;
+}
+
+/* LOGIN TABS */
 input[type="radio"] {
     display: none;
 }
 
-/* Tabs */
 .tabs {
     display: flex;
     justify-content: center;
@@ -42,8 +101,8 @@ input[type="radio"] {
 .tabs label {
     cursor: pointer;
     font-weight: bold;
-    color: black;
     font-size: 16px;
+    color: black;
     padding-bottom: 6px;
 }
 
@@ -53,7 +112,7 @@ input[type="radio"] {
     border-bottom: 3px solid darkorange;
 }
 
-/* Forms */
+/* Show correct form */
 .form {
     display: none;
 }
@@ -66,52 +125,13 @@ input[type="radio"] {
     display: block;
 }
 
-h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #FF8C00;
-    font-size: 24px;
-    font-weight: bold;
-    position: relative;
-}
-
-h3::after {
-    content: '';
-    display: block;
-    width: 60px;               /* underline length */
-    height: 3px;               /* underline thickness */
-    background-color: #FF8C00; /* dark-orange underline */
-    margin: 6px auto 0 auto;   /* center below heading */
-    border-radius: 2px;        /* rounded edges */
-}
-
-
-input {
-    width: 100%;
-    padding: 12px;
-    margin-top: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-input:focus {
-    outline: none;
-    border-color: darkorange;
-}
-
-button {
-    width: 100%;
-    margin-top: 22px;
-    padding: 12px;
-    background-color: darkorange;
-    border: none;
-    color: white;
-    font-size: 15px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #ff8c00;
+/* RESPONSIVE */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    .tabs {
+        gap: 20px;
+    }
 }
