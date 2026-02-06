@@ -31,22 +31,11 @@
         <!-- Links -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('add_book') }}">Add Book</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('issue_book') }}">Issue Book</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
-                </li>
+                <a href="{{ url_for('add_book') }}" class="btn btn-orange w-100 mb-3">Add Book</a>
+                <a href="{{ url_for('issue_book') }}" class="btn btn-orange w-100 mb-3">Issue Book</a>
+                <a href="{{ url_for('dashboard') }}" class="btn btn-orange w-100 mb-3">Dashboard</a>
+                <a href="{{ url_for('view_books') }}" class="btn btn-orange w-100 mb-3">View Books</a>
+                <a href="{{ url_for('logout') }}" class="btn btn-dark w-100">Logout</a>
 
             </ul>
         </div>

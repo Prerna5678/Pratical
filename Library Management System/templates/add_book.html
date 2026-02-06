@@ -6,10 +6,33 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
-        <a class="navbar-brand">Add Book</a>
+
+        <!-- Brand -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="{{ url_for('login') }}">
+            <img src="{{ url_for('static', filename='logo.jpg') }}" width="55" height="50" alt="Logo">
+            <span>Library</span>
+        </a>
+
+        <!-- Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <a href="{{ url_for('add_book') }}" class="btn btn-orange w-100 mb-3">Add Book</a>
+                <a href="{{ url_for('issue_book') }}" class="btn btn-orange w-100 mb-3">Issue Book</a>
+                <a href="{{ url_for('dashboard') }}" class="btn btn-orange w-100 mb-3">Dashboard</a>
+                <a href="{{ url_for('view_books') }}" class="btn btn-orange w-100 mb-3">View Books</a>
+                <a href="{{ url_for('logout') }}" class="btn btn-dark w-100">Logout</a>
+
+            </ul>
+        </div>
+
     </div>
 </nav>
 
