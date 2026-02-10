@@ -1,43 +1,30 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html>
 <head>
     <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container-fluid">
-
-        <!-- Brand -->
-        <a class="navbar-brand d-flex align-items-center gap-2" href="{{ url_for('login') }}">
-            <img src="{{ url_for('static', filename='logo.jpg') }}" width="55" height="50" alt="Logo">
-            <span>Library</span>
-        </a>
-
-        <!-- Toggle -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Links -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <a href="{{ url_for('add_book') }}" class="btn btn-orange w-100 mb-3">Add Book</a>
-                <a href="{{ url_for('issue_book') }}" class="btn btn-orange w-100 mb-3">Issue Book</a>
-                <a href="{{ url_for('dashboard') }}" class="btn btn-orange w-100 mb-3">Dashboard</a>
-                <a href="{{ url_for('view_books') }}" class="btn btn-orange w-100 mb-3">View Books</a>
-                <a href="{{ url_for('logout') }}" class="btn btn-dark w-100">Logout</a>
-
-            </ul>
-        </div>
-
-    </div>
+<nav class="navbar">
+    <a class="navbar-brand">
+        <span>Welcome {{ name }}</span>
+    </a>
 </nav>
 
+<div class="container">
+    <h3>{{ role|capitalize }} Dashboard</h3>
 
+    {% if role in ['admin','staff'] %}
+        <a href="{{ url_for('add_book') }}"><button>Add Book</button></a><br><br>
+    {% endif %}
+
+    <a href="{{ url_for('view_books') }}"><button>View Books</button></a><br><br>
+    <a href="{{ url_for('issue_book') }}"><button>Issue Book</button></a><br><br>
+    <a href="{{ url_for('return_book') }}"><button>Return Book</button></a><br><br>
+
+    <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+</div>
 
 </body>
 </html>
